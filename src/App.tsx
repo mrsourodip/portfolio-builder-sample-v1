@@ -118,7 +118,58 @@ export default function App() {
     return () => sections.forEach((section) => observer.unobserve(section));
   }, [data]);
 
-  return (
+    useEffect(() => {
+    if (!data.name) return;
+    
+    // 1. Set Page Title
+    document.title = "Portfolio";
+
+    // 2. Generate Sleek Squircle Favicon
+    const names = data.name.trim().split(/\s+/);
+    const initials = (names[0]?.[0] || '') + (names[names.length - 1]?.[0] || '');
+    const canvas = document.createElement('canvas');
+    canvas.width = 64;
+    canvas.height = 64;
+    const ctx = canvas.getContext('2d');
+    if (ctx) {
+      // Squircle background (Teal)
+      const r = 16; // border radius
+      ctx.fillStyle = '#14b8a6'; // teal-500
+      ctx.beginPath();
+      ctx.moveTo(r, 0);
+      ctx.lineTo(64 - r, 0);
+      ctx.quadraticCurveTo(64, 0, 64, r);
+      ctx.lineTo(64, 64 - r);
+      ctx.quadraticCurveTo(64, 64, 64 - r, 64);
+      ctx.lineTo(r, 64);
+      ctx.quadraticCurveTo(0, 64, 0, 64 - r);
+      ctx.lineTo(0, r);
+      ctx.quadraticCurveTo(0, 0, r, 0);
+      ctx.fill();
+
+      // Initials Text
+      ctx.fillStyle = 'white';
+      ctx.font = 'bold 32px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(initials.toUpperCase(), 32, 32);
+
+      // Update Favicon Link
+      let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+      if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(link);
+      }
+      link.href = canvas.toDataURL();
+    }
+  }, [data.name]);
+
+  if (loading) {
+    return <div className="h-screen w-screen bg-slate-900 flex items-center justify-center text-slate-400">Loading Portfolio...</div>;
+  }
+
+return (
     <div
       className="@container bg-slate-900 min-h-full text-slate-400 font-sans leading-relaxed selection:bg-teal-300 selection:text-teal-900 relative w-full h-full"
       onMouseMove={handleMouseMove}
@@ -153,7 +204,7 @@ export default function App() {
               <div className="mt-8 flex flex-col gap-6">
                 {/* Contact Icons */}
                 <ul className="flex items-center gap-5" aria-label="Social media">
-                  {data.contact?.github && (
+                  {data.contact?.github && data.contact.github.trim() !== '' && (
                     <li className="text-xs shrink-0">
                       <a className="block hover:text-slate-200 transition-colors" href={data.contact.github.startsWith('http') ? data.contact.github : `https://${data.contact.github}`} target="_blank" rel="noreferrer" title="GitHub">
                         <span className="sr-only">GitHub</span>
@@ -161,7 +212,7 @@ export default function App() {
                       </a>
                     </li>
                   )}
-                  {data.contact?.linkedin && (
+                  {data.contact?.linkedin && data.contact.linkedin.trim() !== '' && (
                     <li className="text-xs shrink-0">
                       <a className="block hover:text-slate-200 transition-colors" href={data.contact.linkedin.startsWith('http') ? data.contact.linkedin : `https://${data.contact.linkedin}`} target="_blank" rel="noreferrer" title="LinkedIn">
                         <span className="sr-only">LinkedIn</span>
@@ -169,7 +220,7 @@ export default function App() {
                       </a>
                     </li>
                   )}
-                  {data.contact?.email && (
+                  {data.contact?.email && data.contact.email.trim() !== '' && (
                     <li className="text-xs shrink-0">
                       <a className="block hover:text-slate-200 transition-colors" href={`mailto:${data.contact.email}`} title="Email">
                         <span className="sr-only">Email</span>
@@ -177,7 +228,7 @@ export default function App() {
                       </a>
                     </li>
                   )}
-                  {data.contact?.portfolio && (
+                  {data.contact?.portfolio && data.contact.portfolio.trim() !== '' && (
                     <li className="text-xs shrink-0">
                       <a className="block hover:text-slate-200 transition-colors" href={data.contact.portfolio.startsWith('http') ? data.contact.portfolio : `https://${data.contact.portfolio}`} target="_blank" rel="noreferrer" title="Portfolio / Website">
                         <span className="sr-only">Portfolio</span>
@@ -190,10 +241,10 @@ export default function App() {
                 {/* Download Button (Always Visible) */}
                 <div>
                   <a
-                    href={data.resumeUrl || (data.name ? `./${data.name.trim().split(/\s+/).map((s: string) => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase()).join("_")}_Resume.docx` : `./Resume.docx`)}
+                    href={data.resumeUrl || (data.name ? `./${data.name.trim().split(/\s+/).map((s: string) => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase()).join("_")}_Resume.pdf` : `./Resume.pdf`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    download={data.resumeUrl ? data.resumeUrl.split('/').pop() : `Resume.docx`}
+                    download={data.resumeUrl ? data.resumeUrl.split('/').pop() : `Resume.pdf`}
                     className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-teal-300 transition-colors group"
                   >
                     <Download className="w-5 h-5" />
@@ -368,7 +419,7 @@ export default function App() {
                       <div className="group relative grid gap-4 pb-1 transition-all @2xl:hover:!opacity-100 @2xl:group-hover/list:opacity-50">
                         <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none @2xl:-inset-x-6 @2xl:block @2xl:group-hover:bg-slate-800/50 @2xl:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] @2xl:group-hover:drop-shadow-lg"></div>
                         <div className="z-10 flex flex-col sm:flex-row sm:items-baseline gap-2">
-                          {cert.date && (
+                          {cert.date && String(cert.date).toLowerCase() !== 'undefined' && (
                             <header className="z-10 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:w-1/4 shrink-0 transition-colors">
                               {cert.date}
                             </header>

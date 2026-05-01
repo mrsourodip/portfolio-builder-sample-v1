@@ -1,18 +1,19 @@
 {
   "name": "SOURODIP KUNDU",
   "title": "Lead Software Engineer",
-  "summary": "A React-focused Lead Software Engineer with over 4 years of experience building and modernizing enterprise-scale IAM and identity governance platforms, specializing in React.js, TypeScript, Micro Frontends, Node.js, GraphQL, and AWS serverless.",
-  "about": "I am a dedicated Lead Software Engineer passionate about crafting scalable distributed systems and high-performance APIs, with a strong focus on frontend architecture and full-stack development. My expertise lies in modernizing enterprise platforms using cutting-edge technologies like React.js, TypeScript, and Micro Frontends, complemented by robust backend skills in Node.js, GraphQL, and AWS. I thrive on leading large-scale transformations, optimizing performance, and fostering innovation through AI-assisted engineering practices. I enjoy solving complex challenges that enhance user experience, streamline operations, and drive significant improvements in product maintainability and release velocity.",
+  "summary": "React-focused Lead Software Engineer with 4+ years of experience building and modernizing enterprise-scale IAM and identity governance platforms, specializing in React.js, TypeScript, Micro Frontends, Node.js, GraphQL, and AWS serverless, recognized for leading large-scale modernization efforts at IBM and driving significant improvements in scalability and maintainability.",
+  "about": "I am a passionate and results-driven Lead Software Engineer with over 4 years of experience specializing in building and modernizing enterprise-scale identity and access management (IAM) platforms. My expertise lies in architecting robust frontend solutions using React.js, TypeScript, and Micro Frontends, complemented by strong full-stack capabilities in Node.js, GraphQL, and AWS serverless technologies. I thrive on tackling complex challenges, optimizing system performance, and fostering innovation through AI-assisted engineering.\n\nMy professional philosophy centers on delivering high-quality, maintainable, and scalable software solutions that directly impact business objectives. I enjoy leading teams, standardizing best practices, and driving strategic technical initiatives that improve developer productivity and accelerate release cycles. I am constantly exploring new technologies and methodologies to enhance user experience and streamline development workflows, always aiming to deliver impactful solutions.",
   "skills": [
     "React.js",
     "TypeScript",
-    "JavaScript",
+    "JavaScript (ES6+)",
     "Redux",
-    "TanStack",
+    "TanStack Query",
+    "TanStack Form",
     "Webpack Module Federation",
     "Next.Js",
     "Micro Frontends",
-    "IBM Carbon Design System",
+    "IBM Carbon",
     "Framer Motion",
     "HTML5",
     "CSS3",
@@ -33,7 +34,8 @@
     "CI/CD",
     "Jira",
     "Postman",
-    "Agile/Scrum",
+    "Agile",
+    "Scrum",
     "IBM Bob",
     "Antigravity",
     "Claude",
@@ -43,7 +45,7 @@
     {
       "id": "1",
       "title": "Portfolio Website",
-      "description": "Interactive portfolio featuring dark/light mode, drag-and-drop layout, smooth animations, an embedded map, and full responsiveness.",
+      "description": "Interactive portfolio with dark/light mode, drag-and-drop layout, smooth animations, and an embedded map, fully responsive.",
       "tech": [
         "React 18",
         "TypeScript",
@@ -58,7 +60,7 @@
     {
       "id": "2",
       "title": "Phool4U",
-      "description": "A full-stack flower delivery platform complete with a product catalog, shopping cart, order management, and user authentication capabilities.",
+      "description": "Full-stack flower delivery platform with product catalog, cart, order management, and user authentication.",
       "tech": [
         "Next.js",
         "Supabase",
@@ -71,7 +73,7 @@
     {
       "id": "3",
       "title": "HelloKirana",
-      "description": "A full-stack e-commerce application designed for local grocery stores, offering end-to-end product management, shopping cart functionality, and order processing.",
+      "description": "Full-stack e-commerce app for local grocery stores with product management, cart, and order processing end-to-end.",
       "tech": [
         "React",
         "Node.js",
@@ -84,7 +86,7 @@
     {
       "id": "4",
       "title": "ECommerce API",
-      "description": "A secure REST API implementing JWT authentication, comprehensive product CRUD operations, order management, and security hardening via Helmet and rate-limiting.",
+      "description": "Secure REST API with JWT authentication, product CRUD, order management, and security hardening via Helmet and rate-limiting.",
       "tech": [
         "Node.js",
         "JWT",
@@ -112,6 +114,13 @@
     },
     {
       "id": "c3",
+      "title": "Generative AI Leader",
+      "issuer": "",
+      "date": "",
+      "link": ""
+    },
+    {
+      "id": "c4",
       "title": "React & Problem Solving",
       "issuer": "HackerRank",
       "date": "",
@@ -123,44 +132,44 @@
       "id": "e1",
       "company": "Persistent Systems",
       "role": "Lead Software Engineer",
-      "date": "2025 — Present",
+      "date": "Dec 2025 — Present",
       "description": [
-        "Led UI modernization across IBM ISC and ISIM, migrating from Dojo to React.js/TypeScript with Carbon Design System, eliminating legacy bottlenecks and reducing front-end technical debt by over 40%.",
-        "Spearheaded enterprise-wide Microfrontend architecture adoption across key IAM modules, improving team ownership, modular scalability, and accelerating release cycles by ~30%.",
-        "Standardized front-end engineering practices and scalable UI patterns, significantly enhancing maintainability, reducing duplication, and boosting developer productivity.",
-        "Drove AI-assisted engineering transformation by integrating tools like IBM Bob, improving test coverage and reducing manual unit testing effort by 30-40%."
+        "Led UI modernization strategy across IBM ISC and IBM ISIM, migrating from Dojo to React.js and TypeScript with Carbon Design System, reducing front-end technical debt by over 40%.",
+        "Defined and implemented enterprise-wide Microfrontend architecture, enabling modular scalability and accelerating release cycles by approximately 30% across IAM modules.",
+        "Standardized front-end engineering practices across teams, improving maintainability, reducing duplication, and boosting developer productivity.",
+        "Drove AI-assisted engineering transformation, integrating tools like IBM Bob for automated test generation, improving test coverage and reducing manual unit testing effort by 30-40%."
       ]
     },
     {
       "id": "e2",
       "company": "Persistent Systems",
       "role": "Senior Software Engineer",
-      "date": "2024 — 2025",
+      "date": "Jul 2024 — Dec 2025",
       "description": [
         "Delivered critical features for IBM Security Verify Governance (ISVG), including Manage Certification and Authorization modules, enhancing enterprise IAM workflow efficiency.",
-        "Developed and improved the ARC (Activity Risk Mitigation) module for real-time detection of SoD and Sensitive Access violations, strengthening compliance and reducing security risks.",
-        "Modernized legacy Dojo.js-based access workflows by introducing time-bound access controls and native file upload, significantly improving user experience and reducing support overhead.",
-        "Designed and implemented a dynamic Custom Roles framework using TanStack Form with i18n and RTL support, reducing configuration effort by ~35% and enabling global adoption."
+        "Developed the ARC (Activity Risk Mitigation) module for real-time Segregation of Duties (SoD) and Sensitive Access violation detection, strengthening compliance and reducing security risks.",
+        "Modernized legacy Dojo.js-based access workflows by introducing time-bound access controls and native file upload, significantly improving user experience.",
+        "Designed and implemented a dynamic Custom Roles framework using TanStack Form, along with i18n and RTL support, reducing configuration effort by approximately 35%."
       ]
     },
     {
       "id": "e3",
       "company": "Persistent Systems",
       "role": "Software Engineer",
-      "date": "2022 — 2024",
+      "date": "Jun 2022 — Jul 2024",
       "description": [
-        "Developed and integrated robust REST APIs using TypeScript in a Node.js environment, ensuring seamless integration with front-end systems and databases while enhancing scalability.",
+        "Developed and integrated REST APIs using TypeScript in a Node.js environment, ensuring seamless integration with front-end systems and improving service scalability.",
         "Led the migration and modernization of legacy Java APIs to TypeScript, optimizing performance and reducing technical debt through detailed analysis and re-engineering.",
-        "Designed and implemented new backend capabilities, including AWS DynamoDB audit logging and event tracking with AWS Lambda, improving system observability and real-time monitoring.",
-        "Enhanced critical features like Rehire scenarios and GPN collision handling, performing RCA with AWS CloudWatch and Lambda to resolve production incidents and improve system stability."
+        "Designed and implemented new backend capabilities, including AWS DynamoDB audit logging and event tracking via AWS Lambda, enhancing system observability.",
+        "Independently enhanced critical features and performed RCA using AWS CloudWatch and Lambda, resolving QA/production incidents and improving system stability."
       ]
     }
   ],
   "contact": {
-    "email": "sourodip.works@gmail.com",
+    "email": "sourodipkundu.w@gmail.com",
     "linkedin": "https://in.linkedin.com/in/sourodip-k",
     "github": "https://github.com/mrsourodip",
     "portfolio": "https://portfoliov1-mu-two.vercel.app/"
   },
-  "resumeUrl": "./Sourodip_Kundu_Resume.docx"
+  "resumeUrl": "./Sourodip_Kundu_Resume.pdf"
 }
